@@ -18,6 +18,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
     <script>
@@ -26,14 +51,14 @@
           var demo = document.getElementById("dqn_goals").value;
           var video = document.getElementById("dqn-result-video");
           video.src = demo;
-          video.playbackRate = 1.0;
+          video.playbackRate = 1
           video.play();
         }
     function updateGHRLVideo() {
       var demo = document.getElementById("ghrl_goals").value;
       var video = document.getElementById("ghrl-result-video");
       video.src = demo;
-      video.playbackRate = 1.0;
+      video.playbackRate = 1
       video.play();
     }
 
@@ -41,24 +66,62 @@
       var demo = document.getElementById("gcb_goals").value;
       var video = document.getElementById("gcb-result-video");
       video.src = demo;
-      video.playbackRate = 1.0;
+      video.playbackRate = 1
       video.play();
     }
     function updateInfoBotVideo() {
           var demo = document.getElementById("infobot_goals").value;
           var video = document.getElementById("infobot-result-video");
           video.src = demo;
-          video.playbackRate = 1.0;
+          video.playbackRate = 1
           video.play();
         }
     function updateInfoGoalVideo() {
       var demo = document.getElementById("infogoal_goals").value;
       var video = document.getElementById("infogoal-result-video");
       video.src = demo;
-      video.playbackRate = 1.0;
+      video.playbackRate = 1
+      video.play();
+    }
+    function updateDQN_ObjSearch_Video() {
+          var demo = document.getElementById("dqn_objsearch_goals").value;
+          var video = document.getElementById("dqn-objsearch-result-video");
+          video.src = demo;
+          video.playbackRate = 1
+          video.play();
+    }
+
+    function updateGHRL_ObjSearch_Video() {
+      var demo = document.getElementById("ghrl_objsearch_goals").value;
+      var video = document.getElementById("ghrl-objsearch-result-video");
+      video.src = demo;
+      video.playbackRate = 1
       video.play();
     }
 
+    function updateGCB_ObjSearch_Video() {
+      var demo = document.getElementById("gcb_objsearch_goals").value;
+      var video = document.getElementById("gcb-objsearch-result-video");
+      video.src = demo;
+      video.playbackRate = 1
+      video.play();
+    }
+
+    function updateInfoBot_ObjSearch_Video() {
+          var demo = document.getElementById("infobot_objsearch_goals").value;
+          var video = document.getElementById("infobot-objsearch-result-video");
+          video.src = demo;
+          video.playbackRate = 1
+          video.play();
+        }
+
+    function updateInfoGoal_ObjSearch_Video() {
+      var demo = document.getElementById("infogoal_objsearch_goals").value;
+      var video = document.getElementById("infogoal-objsearch-result-video");
+      video.src = demo;
+      video.playbackRate = 1
+      video.play();
+    }
 
     function updateMultiVideo() {
       var demo = document.getElementById("multi-menu-demos").value;
@@ -80,6 +143,8 @@
       video.playbackRate = 2.0;
       video.play();
     }
+
+
 
 
 
@@ -113,10 +178,268 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">EmboidedQA Experiment</h1>
+                    <h1 class="title is-1 publication-title">InfoGoal</h1>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <h2 class="title is-2">Visual Object Search</h2>
+            <!-- Interpolating. -->
+            <h3 class="title is-3">Goals</h3>
+            For the Object Search task, we need to guarantee that a testing goal is located close to at least a training goal, otherwise, the trained policy is unlikely to find the test goal with a random search.
+We select two objects in each room as training goals and leave the other objects as test goals, i.e., the train-test split is 8/16.
+This split strategy is reasonable since we assume that objects located in the same room can be found by similar goal-reaching policies.
+            <br/>
+            <br/>
+            <br/>
+            <div class="columns">
+
+                <div class="column has-text-left">
+                    <h5 class="title is-4">Training Goals</h5>
+                    <div style="height:200px;width:560px;border: 4px solid #ccc;overflow:auto;">
+                        0.[dining room] nature_valley_sweet_and_salty_nut_cashew<br>
+                        1.[dining room] nature_valley_sweet_and_salty_nut_peanut<br>
+                        2.[kitchen] nutrigrain_harvest_blueberry_bliss<br>
+                        3.[kitchen] aunt_jemima_original_syrup<br>
+                        4.[living room] coca_cola_glass_bottle<br>
+                        5.[living room] spongebob_squarepants_fruit_snaks<br>
+                        6.[bathroom] softsoap_gold<br>
+                        7.[bathroom] vo5_tea_therapy_healthful_green_tea_smoothing_shampoo<br>
+                    </div>
+                </div>
+
+                <div class="horizontalgap" style="width:100px"></div>
+
+                <div class="column has-text-left">
+                    <h5 class="title is-4">Test Goals</h5>
+                    <div style="height:200px;width:560px;border: 4px solid #ccc;overflow:auto;">
+                        0.[dining room] paper_plate<br>
+                        1.[bathroom] advil_liqui_gels<br>
+                        2.[dining room] cholula_chipotle_hot_sauce<br>
+                        3.[dining room] crystal_hot_sauce<br>
+                        4.[living room] hersheys_bar<br>
+                        5.[dining room] honey_bunches_of_oats_honey_roasted<br>
+                        6.[kitchen] honey_bunches_of_oats_with_almonds<br>
+                        7.[bathroom] listerine_green<br>
+                        8.[kitchen] mahatma_rice<br>
+                        9.[dining room] nature_valley_granola_thins_dark_chocolate<br>
+                        10.[bathroom] pepto_bismol<br>
+                        11.[kitchen] quaker_chewy_low_fat_chocolate_chunk<br>
+                        12.[kitchen] softsoap_clear<br>
+                        13.[dining room] tapatio_hot_sauce<br>
+                        14.[living room] nature_valley_sweet_and_salty_nut_almond<br>
+                        15.[kitchen] nature_valley_sweet_and_salty_nut_roasted_mix_nut<br>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--/ Re-rendering. -->
+
+            <h2 class="title is-3">Result Visualizations</h2>
+
+            <div class="columns">
+
+                <div class="column has-text-centered">
+                    <h4 class="title is-4">Goal-Conditioned DQN</h4>
+                    target object
+                    <div class="select is-small">
+                        <select id="dqn_objsearch_goals" onchange="updateDQN_ObjSearch_Video()">
+                            <option value="media/results_web/objectSearch/dqn_raw_advil_liqui_gels 1.mp4">advil liqui
+                                gels
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_raw_honey_bunches_of_oats_honey_roasted 10.mp4">
+                                honey bunches of oats honey roasted
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_raw_nature_valley_sweet_and_salty_nut_almond 28.mp4">
+                                nature valley sweet and salty nut almond
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_raw_nature_valley_sweet_and_salty_nut_roasted_mix_nut 31.mp4">
+                                nature valley sweet and salty nut roasted mix nut
+                            </option>
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <video id="dqn-objsearch-result-video"
+                           controls
+                           muted
+                           autoplay
+                           loop
+                           width="100%">
+                        <source src="media/results_web/objectSearch/dqn_raw_advil_liqui_gels 1.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="column has-text-centered">
+                    <h4 class="title is-4">GHRL</h4>
+                    target object
+                    <div class="select is-small">
+                        <select id="ghrl_objsearch_goals" onchange="updateGHRL_ObjSearch_Video()">
+                            <option value="media/results_web/objectSearch/ghrl_raw_advil_liqui_gels 1.mp4">advil liqui
+                                gels
+                            </option>
+                            <option value="media/results_web/objectSearch/ghrl_raw_honey_bunches_of_oats_honey_roasted 10.mp4">
+                                honey bunches of oats honey roasted
+                            </option>
+                            <option value="media/results_web/objectSearch/ghrl_raw_nature_valley_sweet_and_salty_nut_almond 28.mp4">
+                                nature valley sweet and salty nut almond
+                            </option>
+                            <option value="media/results_web/objectSearch/ghrl_raw_nature_valley_sweet_and_salty_nut_roasted_mix_nut 31.mp4">
+                                nature valley sweet and salty nut roasted mix nut
+                            </option>
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <video id="ghrl-objsearch-result-video"
+                           controls
+                           muted
+                           autoplay
+                           loop
+                           width="100%">
+                        <source src="media/results_web/objectSearch/ghrl_raw_advil_liqui_gels 1.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+            <div class="columns">
+
+                <div class="column has-text-centered">
+                    <h4 class="title is-4">GCB</h4>
+                    target object
+                    <div class="select is-small">
+                        <select id="gcb_objsearch_goals" onchange="updateGCB_ObjSearch_Video()">
+                            <option value="media/results_web/objectSearch/dqn_gcb_advil_liqui_gels 1.mp4">advil liqui
+                                gels
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_gcb_honey_bunches_of_oats_honey_roasted 10.mp4">
+                                honey bunches of oats honey roasted
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_gcb_nature_valley_sweet_and_salty_nut_almond 28.mp4">
+                                nature valley sweet and salty nut almond
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_gcb_nature_valley_sweet_and_salty_nut_roasted_mix_nut 31.mp4">
+                                nature valley sweet and salty nut roasted mix nut
+                            </option>
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <video id="gcb-objsearch-result-video"
+                           controls
+                           muted
+                           autoplay
+                           loop
+                           width="100%">
+                        <source src="media/results_web/objectSearch/dqn_gcb_advil_liqui_gels 1.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="column has-text-centered">
+                    <h4 class="title is-4">InfoBot</h4>
+                    target object
+                    <div class="select is-small">
+                        <select id="infobot_objsearch_goals" onchange="updateInfoBot_ObjSearch_Video()">
+                            <option value="media/results_web/objectSearch/dqn_infobot_advil_liqui_gels 1.mp4">advil
+                                liqui
+                                gels
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infobot_honey_bunches_of_oats_honey_roasted 10.mp4">
+                                honey bunches of oats honey roasted
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infobot_nature_valley_sweet_and_salty_nut_almond 28.mp4">
+                                nature valley sweet and salty nut almond
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infobot_nature_valley_sweet_and_salty_nut_roasted_mix_nut 31.mp4">
+                                nature valley sweet and salty nut roasted mix nut
+                            </option>
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <video id="infobot-objsearch-result-video"
+                           controls
+                           muted
+                           autoplay
+                           loop
+                           width="100%">
+                        <source src="media/results_web/objectSearch/dqn_infobot_advil_liqui_gels 1.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+            <div class="columns">
+
+                <div class="column has-text-centered">
+                    <h4 class="title is-4">InfoGoal</h4>
+                    target object
+                    <div class="select is-small">
+                        <select id="infogoal_objsearch_goals" onchange="updateInfoGoal_ObjSearch_Video()">
+                            <option value="media/results_web/objectSearch/dqn_infogoal_advil_liqui_gels 1.mp4">advil
+                                liqui
+                                gels
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infogoal_honey_bunches_of_oats_honey_roasted 10.mp4">
+                                honey bunches of oats honey roasted
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infogoal_nature_valley_sweet_and_salty_nut_almond 28.mp4">
+                                nature valley sweet and salty nut almond
+                            </option>
+                            <option value="media/results_web/objectSearch/dqn_infogoal_nature_valley_sweet_and_salty_nut_roasted_mix_nut 31.mp4">
+                                nature valley sweet and salty nut roasted mix nut
+                            </option>
+                        </select>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <video id="infogoal-objsearch-result-video"
+                           controls
+                           muted
+                           autoplay
+                           loop
+                           width="100%"
+                    >
+                        <source src="media/results_web/objectSearch/dqn_infogoal_advil_liqui_gels 1.mp4"
+                                type="video/mp4">
+                    </video>
+
+                    <!--                    <script>-->
+                    <!--                        // Get a reference to the video element-->
+                    <!--                        const video = document.getElementById("infogoal-objsearch-result-video");-->
+
+                    <!--                        // Function to set the video playback speed-->
+                    <!--                        function setPlaybackSpeed(speed) {-->
+                    <!--                            video.playbackRate = speed;-->
+                    <!--                        }-->
+
+                    <!--                        // Example: Set the playback speed to 1.5x (50% faster)-->
+                    <!--                        setPlaybackSpeed(0.5);-->
+                    <!--                    </script>-->
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
     </div>
 </section>
 
@@ -124,20 +447,20 @@
 <section class="section">
     <div class="container is-max-widescreen">
         <div class="rows">
+            <h2 class="title is-2">Embodied Question Answering (QA)</h2>
             <!-- Interpolating. -->
-            <h3 class="title is-3">Setting</h3>
-            <br/>
-            <h4 class="title is-4">Goals</h4>
-            The questions are generated by gpt-3.5-turbo. Specifically, we use the prompt ``Print a Python list which contains 100 questions about [object]".
+            <h3 class="title is-3">Goals</h3>
+            The questions are generated by gpt-3.5-turbo. Specifically, we use the prompt ``Print a Python list which
+            contains 100 questions about [object]".
             We replace ``[object]" with the objects on the shelf.
             <br/>
             <br/>
             <br/>
             <div class="columns">
 
-                <div class="column has-text-centered">
+                <div class="column has-text-left">
                     <h5 class="title is-4">Training Goals</h5>
-                    <div style="height:120px;overflow:auto;">
+                    <div style="height:200px;width:560px;border: 4px solid #ccc;overflow:auto;">
                         'What is the <b>statue</b> made of'?<br>
                         'What is the history of <b>oil painting</b>?'<br>
                         'What is the <b>orange cup</b> used for?'<br>
@@ -146,9 +469,9 @@
 
                 <div class="horizontalgap" style="width:100px"></div>
 
-                <div class="column has-text-centered">
+                <div class="column has-text-left">
                     <h5 class="title is-4">Test Goals</h5>
-                    <div style="height:120px;width:450px;overflow:auto;">
+                    <div style="height:200px;width:560px;border: 4px solid #ccc;overflow:auto;">
                         What is a <b>storage_card</b>?<br>
                         How does a <b>storage_card</b> work?<br>
                         What are thedifferent types of <b>storage_card</b>s?<br>
@@ -279,7 +602,7 @@
             <br/>
             <br/>
 
-            <h4 class="title is-4">Hardware Setting</h4>
+            <h3 class="title is-3">Hardware Setting</h3>
             <img src="media/images/hardware_setting_compressed.png" class="interpolation-image"
                  alt="Interpolate start reference image."/>
             <br/>
@@ -293,21 +616,24 @@
 
             <!--/ Re-rendering. -->
 
-            <h2 class="title is-3">Result Visualizations</h2>
+            <h3 class="title is-3">Result Visualizations</h3>
 
             <div class="columns">
 
                 <div class="column has-text-centered">
-                    <h3 class="title is-5">Goal-Conditioned DQN</h3>
+                    <h4 class="title is-4">Goal-Conditioned CQL</h4>
 
                     question
                     <div class="select is-small">
                         <select id="dqn_goals" onchange="updateDQNVideo()">
-                            <option value="media/results_web/dqn_raw_33.mp4">Why should we wear face masks?</option>
-                            <option value="media/results_web/dqn_raw_34.mp4">How long does face painting typically
+                            <option value="media/results_web/embodiedQA/dqn_raw_33.mp4">Why should we wear face masks?
+                            </option>
+                            <option value="media/results_web/embodiedQA/dqn_raw_34.mp4">How long does face painting
+                                typically
                                 last?
                             </option>
-                            <option value="media/results_web/dqn_raw_37.mp4">What are the different types of laundry
+                            <option value="media/results_web/embodiedQA/dqn_raw_37.mp4">What are the different types of
+                                laundry
                                 detergents available in the market?
                             </option>
 
@@ -322,22 +648,26 @@
                            autoplay
                            loop
                            width="100%">
-                        <source src="media/results_web/dqn_raw_33.mp4"
+                        <source src="media/results_web/embodiedQA/dqn_raw_33.mp4"
                                 type="video/mp4">
                     </video>
                 </div>
 
                 <div class="column has-text-centered">
-                    <h3 class="title is-5">GHRL</h3>
+                    <h4 class="title is-4">GHRL</h4>
 
                     question
                     <div class="select is-small">
                         <select id="ghrl_goals" onchange="updateGHRLVideo()">
-                            <option value="media/results_web/ghrl_raw_33.mp4">Why should we wear face masks?</option>
-                            <option value="media/results_web/ghrl_raw_34.mp4">How long does face painting typically
+                            <option value="media/results_web/embodiedQA/ghrl_raw_33.mp4">Why should we wear face
+                                masks?
+                            </option>
+                            <option value="media/results_web/embodiedQA/ghrl_raw_34.mp4">How long does face painting
+                                typically
                                 last?
                             </option>
-                            <option value="media/results_web/ghrl_raw_37.mp4">What are the different types of laundry
+                            <option value="media/results_web/embodiedQA/ghrl_raw_37.mp4">What are the different types of
+                                laundry
                                 detergents available in the market?
                             </option>
 
@@ -352,7 +682,7 @@
                            autoplay
                            loop
                            width="100%">
-                        <source src="media/results_web/ghrl_raw_33.mp4"
+                        <source src="media/results_web/embodiedQA/ghrl_raw_33.mp4"
                                 type="video/mp4">
                     </video>
                 </div>
@@ -362,16 +692,19 @@
 
             <div class="columns">
                 <div class="column has-text-centered">
-                    <h3 class="title is-5">GCB</h3>
+                    <h4 class="title is-4">GCB</h4>
 
                     question
                     <div class="select is-small">
                         <select id="gcb_goals" onchange="updateGCBVideo()">
-                            <option value="media/results_web/dqn_gcb_33.mp4">Why should we wear face masks?</option>
-                            <option value="media/results_web/dqn_gcb_34.mp4">How long does face painting typically
+                            <option value="media/results_web/embodiedQA/dqn_gcb_33.mp4">Why should we wear face masks?
+                            </option>
+                            <option value="media/results_web/embodiedQA/dqn_gcb_34.mp4">How long does face painting
+                                typically
                                 last?
                             </option>
-                            <option value="media/results_web/dqn_gcb_37.mp4">What are the different types of laundry
+                            <option value="media/results_web/embodiedQA/dqn_gcb_37.mp4">What are the different types of
+                                laundry
                                 detergents available in the market?
                             </option>
 
@@ -386,21 +719,25 @@
                            autoplay
                            loop
                            width="100%">
-                        <source src="media/results_web/dqn_gcb_33.mp4"
+                        <source src="media/results_web/embodiedQA/dqn_gcb_33.mp4"
                                 type="video/mp4">
                     </video>
                 </div>
                 <div class="column has-text-centered">
-                    <h3 class="title is-5">InfoBot</h3>
+                    <h4 class="title is-4">InfoBot</h4>
 
                     question
                     <div class="select is-small">
                         <select id="infobot_goals" onchange="updateInfoBotVideo()">
-                            <option value="media/results_web/dqn_infobot_33.mp4">Why should we wear face masks?</option>
-                            <option value="media/results_web/dqn_infobot_34.mp4">How long does face painting typically
+                            <option value="media/results_web/embodiedQA/dqn_infobot_33.mp4">Why should we wear face
+                                masks?
+                            </option>
+                            <option value="media/results_web/embodiedQA/dqn_infobot_34.mp4">How long does face painting
+                                typically
                                 last?
                             </option>
-                            <option value="media/results_web/dqn_infobot_37.mp4">What are the different types of laundry
+                            <option value="media/results_web/embodiedQA/dqn_infobot_37.mp4">What are the different types
+                                of laundry
                                 detergents available in the market?
                             </option>
 
@@ -415,7 +752,7 @@
                            autoplay
                            loop
                            width="100%">
-                        <source src="media/results_web/dqn_infobot_33.mp4"
+                        <source src="media/results_web/embodiedQA/dqn_infobot_33.mp4"
                                 type="video/mp4">
                     </video>
                 </div>
@@ -423,17 +760,20 @@
 
             <div class="columns">
                 <div class="column has-text-centered">
-                    <h3 class="title is-5">InfoGoal</h3>
+                    <h4 class="title is-4">InfoGoal</h4>
 
                     question
                     <div class="select is-small">
                         <select id="infogoal_goals" onchange="updateInfoGoalVideo()">
-                            <option value="media/results_web/dqn_infogoal_33.mp4">Why should we wear face masks?
+                            <option value="media/results_web/embodiedQA/dqn_infogoal_33.mp4">Why should we wear face
+                                masks?
                             </option>
-                            <option value="media/results_web/dqn_infogoal_34.mp4">How long does face painting typically
+                            <option value="media/results_web/embodiedQA/dqn_infogoal_34.mp4">How long does face painting
+                                typically
                                 last?
                             </option>
-                            <option value="media/results_web/dqn_infogoal_37.mp4">What are the different types of
+                            <option value="media/results_web/embodiedQA/dqn_infogoal_37.mp4">What are the different
+                                types of
                                 laundry detergents available in the market?
                             </option>
 
@@ -448,7 +788,7 @@
                            autoplay
                            loop
                            width="100%">
-                        <source src="media/results_web/dqn_infogoal_33.mp4"
+                        <source src="media/results_web/embodiedQA/dqn_infogoal_33.mp4"
                                 type="video/mp4">
                     </video>
                 </div>
